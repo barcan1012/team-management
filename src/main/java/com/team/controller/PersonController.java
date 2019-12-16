@@ -25,9 +25,6 @@ public class PersonController {
 
     @PostMapping
     public ResponseEntity savePerson(@RequestBody PersonDTO person){
-
-//        Person personX= personService.savePerson(person.getFirstName(),person.getLastName());
-//        return ResponseEntity.status(HttpStatus.CREATED).body(personX);
         PersonDTO savedPerson = personService.save(person);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedPerson);
 
